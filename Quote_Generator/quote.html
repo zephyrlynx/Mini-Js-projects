@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facts of the Day</title>
+    <link rel="stylesheet" href="quote.css">
+</head>
+<body>
+    <div class="quote-box">
+        <h2>Facts of the day</h2>
+        <blockquote id="fact">Loading...</blockquote>
+        <!-- <span>Loading...</span> -->
+        <div>
+            <button onclick="getfact(api_url)">New Facts</button>
+            <button onclick="tweet()"><img src="x.png">Tweet</button>
+        </div>
+    </div>
+
+
+
+    <script>
+        const fact = document.getElementById('fact')
+        const api_url = 'https://cat-fact.herokuapp.com/facts/random'
+
+        async function getfact(url){
+            const response = await fetch(url);
+            var data = await response.json();
+            console.log(data)
+            fact.innerHTML = data.text;
+        }
+
+        getfact(api_url);
+
+        function tweet(){
+            window.open("https://twitter.com/intent/tweet?text=" + fact.innerHTML, "Tweet window", "width=600, height=600")
+        }
+    </script>
+</body>
+</html>
