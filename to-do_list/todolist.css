@@ -1,0 +1,128 @@
+/* Importing Google fonts  */
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Bungee+Spice&family=Jersey+10&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+/*  default content  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: "Nunito", sans-serif;
+}
+
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #153677,#4e058f);
+    padding: 10px;
+}
+.todo-List{
+    width: 100%;
+    max-width: 540px;
+    background: #fff;
+    margin: 100px auto 20px;
+    padding: 40px 30px  70px;
+    border-radius: 10px;
+}
+.todo-List h1{
+    color: #002765;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.todo-List h1 img {
+width: 30px;
+margin-left: 10px;
+}
+
+
+
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: gainsboro;
+    background-size: cover;
+    background-position: center;
+    padding-left: 20px;
+    border-radius: 20px;
+    margin-bottom: 35px;
+    
+}
+
+#input-box{
+    width: 200px;
+    height: 45px;
+    font-size: 20px;
+    background: transparent;
+
+    
+
+}
+
+button{
+    width: 100px;
+    height: 45px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 20px;
+    padding-right: 0px;
+    background-color:burlywood;
+    
+}
+ul li {
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer ;
+    position: relative;
+}
+
+ul li::before {
+    content:'' ;
+    position: absolute;
+    height:  28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(images/unchecked.jpg);
+    background-size: cover;
+    background-position: center;
+    top: 12px ;
+    left: 8px;
+}
+
+ul li.checked{
+    color: #555;
+    text-decoration: line-through;
+
+}
+
+
+ul li.checked::before{
+    background-image: url(images/checked.jpg);
+}
+
+ul li span{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+
+
+ul li span:hover{
+background: #edeef0 ;
+}
